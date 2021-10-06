@@ -46,7 +46,7 @@ Setelah pengecekan ternyata tidak ada data yang mengalami missing value
 * mengecek data yang mengalami duplicate
 diketahui bahwa ada sebanyak 30 yang mengalami duplicated
 
-![data_duplicate](images/duplicated.png)
+![data_duplicate](images/duplicate.png)
 
 <br> 
 untuk mengatasi itu dilakukan penghapusan data yang mengalami duplikat
@@ -55,9 +55,25 @@ untuk mengatasi itu dilakukan penghapusan data yang mengalami duplikat
 
 ![descriptive_statistika](images/desc.png)
 
-Diketahui data memiliki nilai minimal 
+Diketahui data Volume memiliki nilai minimal 0 maka cek lokasi tersebut dan penyebab data tersebut bernilai nol
+ !['loc_vol_0](images/vol0.png)
+Data Volume bernilai 0 dikarenakan pada harii itu tidak terjadi proses transaksi
 
-* cek korerasi antar data untuk mengetahui keterkaitan antar variable 
+* visualisasikan data variabel 
+-- visualisasi semua nama variable dengan hisogram
+![var](images/semua.png)
+-- visualisasi data Close berdasarkan index(rentang taun 2010-2020)
+![close](image/close.png)
+-- Visualisasi data open-close berdasarkan week/minggu dalam data ini ternyata proses dalam satu minggu hanya terjadi 5 kali transaksi saja menggunakan barplot
+    * close Open Price 
+    Data diambil dengan menentukan nilai gap dari close dan open dengan rumus:
+    $ open close week = (open - close)/close$
+
+    ![close_open](images/week.png)
+    * High Low Price
+    ![low_high](image/high_low.png)
+-- Visualisasi data high-low berdasarkan week/minggu menggunakan barplot
+* cek korelasi antar data untuk mengetahui keterkaitan antar variable 
 
 
 
