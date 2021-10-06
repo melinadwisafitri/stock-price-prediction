@@ -46,14 +46,14 @@ Setelah pengecekan ternyata tidak ada data yang mengalami missing value
 * mengecek data yang mengalami duplicate
 diketahui bahwa ada sebanyak 30 yang mengalami duplicated
 
-[data_duplicate](images/duplicated.png)
+![data_duplicate](images/duplicated.png)
 
 <br> 
 untuk mengatasi itu dilakukan penghapusan data yang mengalami duplikat
 
 * cek Deskripsi statistika dengan menggunakan ```data.describe() ```
 
-[descriptive_statistika](images/desc.png)
+![descriptive_statistika](images/desc.png)
 
 Diketahui data memiliki nilai minimal 
 
