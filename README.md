@@ -1,12 +1,17 @@
 # Laporan Proyek Machine Learning - Melina Dwi Safitri
 
 ## Domain Proyek
-Dalam bidang perbankan khususnya saham kadang harga close untuk minggu selanjutnya belum bisa untuk ditentukan, sehingga diperlukan cara untuk mempermudah permasalahan tersebut
+Dalam bidang perekonomian suatu negara dipengaruhi oleh pasar saham/modal yang didalamnya terdapat proses jual beli daham sesuai dengan harga yang ada dipasar.<br>
 
+Melihat konsidi pasar saham dalam negeri khusus nya BCA setiap harinya mengalami naik turun tidak menentu maka perlu untuk mempelajari data masa lalu dari perbankan, untuk strategi investasi kedepannya. Sehingga Investor dapat melakukan analisis terhadap perusahaan yang akan diinvestasikan. <br> 
+sumber = [ANALISIS PREDIKSI HARGA SAHAM SEKTOR PERBANKAN 
+MENGGUNAKAN ALGORITMA LONG-SHORT TERMS MEMORY
+(LSTM)](http://www.jurnal.upnyk.ac.id/index.php/semnasif/article/view/4135)
+Ada beberapa metode yang bisa digunakan untuk memprediksi harga Close saham salah satunya LSTM.<br>
+Maka akan dilakukan proses pelatihan data/training denggan menggunakan LSTM, tetapi sebelum model dibuat diperlukan eksplorasi data terlebih dahulu sehingga data yang digunakan tidak akan menimbulkan masalah untuk kedepannya.
 
 ## Business Understanding
-Bagian ini menjelaskan proses klarifikasi masalah dan mengajukan minimal satu solusi untuk menyelesaikan permasalahan. Bagian laporan ini mencakup:
-
+Untuk menyelesaikan permsalahan itu akan dimulai dengan analisis isi dari dta tersebut yang kemudian akan dibuat pemodelam dengan menggunakan deep learning LSTM.
 ### Problem Statements
 - Bagaimana cara menentukan prediksi price close untuk next day menggunakan time series?
 - Berapakah tingkat error yang didapatkan dari proses training?
