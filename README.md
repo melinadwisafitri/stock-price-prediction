@@ -64,15 +64,18 @@ Data Volume bernilai 0 dikarenakan pada harii itu tidak terjadi proses transaksi
     * visualisasi semua nama variable dengan hisogram
 ![var](images/semua.png)
     * visualisasi data Close berdasarkan index(rentang taun 2010-2020)
-![close](image/close.png)
+
+![close](images/close.png)
     * Visualisasi data open-close berdasarkan week/minggu dalam data ini ternyata proses dalam satu minggu hanya terjadi 5 kali transaksi saja menggunakan barplot
         * close Open Price 
         Data diambil dengan menentukan nilai gap dari close dan open dengan rumus:
-        $ open close week = (open - close)/close$
+
+        $open close week = (open - close)/close$
 
         ![close_open](images/week.png)
         * High Low Price
-        ![low_high](image/high_low.png)
+
+        ![low_high](images/high_low.png)
 * cek korelasi antar data untuk mengetahui keterkaitan antar variable 
 
 ![corelation_data](images/heatmap.png)
@@ -126,6 +129,7 @@ kemudian setelah model terbentuk lakukan training data untuk prosesnya dijalanka
 
 
 ![evaluasi](images/evaluasi.png)
+
 Berdasarkan hasil evaluasi error diketahui data presentasi error yaitu 10.75 sedangkan media dari error adalah 9.14 yang mengindikasikan ada berapa data yang memiliki outlier dalam proses prediksi.
 
 ## Prediction Next Day
