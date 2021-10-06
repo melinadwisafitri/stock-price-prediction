@@ -8,15 +8,16 @@ Dalam bidang perbankan khususnya saham kadang harga close untuk minggu selanjutn
 Bagian ini menjelaskan proses klarifikasi masalah dan mengajukan minimal satu solusi untuk menyelesaikan permasalahan. Bagian laporan ini mencakup:
 
 ### Problem Statements
-- Bagaimana cara menentukan prediksi price close minggu depan?
-- Bagaimana membangun machine Learning yang sesuai dengan data bentuk Time Series?
+- Bagaimana cara menentukan prediksi price close untuk next day menggunakan time series?
+- Berapakah tingkat error yang didapatkan dari proses training?
+- Apa algortima yang bisa digunakan untuk kasus ini?
 
 ### Goals
 - Proyek ini bertujuan untuk memprediksi harga close untuk harga saham BCA, dengan mengimplementasikan machine learning didalamnya sehingga lebih mempermudah proses
 - Membentuk model yang optimal dengan data Time Series
 
 ### Solution statements
-untuk mengatasi permasalahan disini menggunakan satu algoritma yaitu Convolutional LSTM
+* Untuk mengatasi permasalah yang terjadi dapat dengan mengimplementasikan algoritma deep Learning dan mengolah data terlebih dahulu sehingga data lebih tersusun rapi, untuk menghitung tingkat error bisa memanfaatkan metrics Mean Absolute Error.
 
 ## Data Understanding
 Data yang digunakan adalah dataset stock price dari BCA yang diambil dari tahun 2010 sampai 2020 dari Yahoo Finance <br>
