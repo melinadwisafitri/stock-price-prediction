@@ -69,14 +69,13 @@ Diketahui data Volume memiliki nilai minimal 0 maka cek lokasi tersebut dan peny
 
 Data Volume bernilai 0 dikarenakan pada hari itu tidak terjadi proses transaksi
 
-* visualisasikan data variabel 
-    * visualisasi semua nama variable dengan histogram
+* Visualisasidata variabel 
+    * Visualisasi semua variable dengan histogram
 ![var](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/semua.png)
 
-    * visualisasi data Close berdasarkan index(rentang taun 2010-2020)
+    * Visualisasi data Close berdasarkan index(rentang taun 2010-2020)
 
 ![close](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/close.png)
-
     * Visualisasi data open-close berdasarkan week/minggu dalam data ini ternyata proses dalam satu minggu hanya terjadi 5 kali transaksi saja menggunakan barplot
         * close Open Price 
         Data diambil dengan menentukan nilai gap dari close dan open dengan rumus:
