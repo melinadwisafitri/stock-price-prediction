@@ -78,7 +78,7 @@ Data Volume bernilai 0 dikarenakan pada hari itu tidak terjadi proses transaksi
         * close Open Price 
         Data diambil dengan menentukan nilai gap dari close dan open dengan rumus:
 
-        $ open close week = (open - close)/close $<br>![close_open](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/week.png)
+        opencloseweek=(open−close)/close<br>![close_open](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/week.png)
 
         * High Low Price<br>![low_high](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/high_low.png)
 
