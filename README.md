@@ -53,14 +53,14 @@ Setelah pengecekan ternyata tidak ada data yang mengalami missing value
 * mengecek data yang mengalami duplicate
 diketahui bahwa ada sebanyak 30 yang mengalami duplicated
 
-![data_duplicate](images/https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/duplicate.png)
+![data_duplicate](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/duplicate.png)
 
 <br> 
 Untuk mengatasi itu dilakukan penghapusan data yang mengalami duplikat
 
 * cek Deskripsi statistika dengan menggunakan ```data.describe() ```
 
-![descriptive_statistika](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/desc.png
+![descriptive_statistika](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/desc.png)
 
 Diketahui data Volume memiliki nilai minimal 0 maka cek lokasi tersebut dan penyebab data tersebut bernilai nol
 
@@ -71,7 +71,7 @@ Data Volume bernilai 0 dikarenakan pada hari itu tidak terjadi proses transaksi
 
 * visualisasikan data variabel 
     * visualisasi semua nama variable dengan histogram
-![var](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/semua.png
+![var](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/semua.png)
 
     * visualisasi data Close berdasarkan index(rentang taun 2010-2020)
 
