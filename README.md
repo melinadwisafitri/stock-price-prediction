@@ -1,13 +1,11 @@
 # Laporan Proyek Machine Learning - Melina Dwi Safitri
 
 ## Daftar Content
-<!-- AUTO-GENERATED-CONTENT:START (TOC:collapse=true&collapseText="Click to expand") -->
 <details>
     <summary>Content</summary>
-    * [Domain Proyek](#domain)
+    - [Domain Proyek](#domain)
 
 </detail>
-<!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Domain Proyek
 Dalam bidang perekonomian suatu negara dipengaruhi oleh pasar saham/modal yang didalamnya terdapat proses jual beli daham sesuai dengan harga yang ada dipasar.<br>
