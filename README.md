@@ -5,7 +5,7 @@
     <summary>Content</summary>
     - [Domain Proyek](#domain)
 
-</detail>
+</details>
 
 ## Domain Proyek
 Dalam bidang perekonomian suatu negara dipengaruhi oleh pasar saham/modal yang didalamnya terdapat proses jual beli daham sesuai dengan harga yang ada dipasar.<br>
