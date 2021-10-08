@@ -5,7 +5,7 @@
 
 - [Domain Proyek](#domain-proyek)
 - [Business Understanding](#business-understanding)
-- [Problem Statements](#problem-statements)
+    - [Problem Statements](#problem-statements)
     - [Goals](#goals)
     - [Solution statements](#solution-statements)
 - [Data Understanding](#data-nderstanding)
@@ -134,7 +134,7 @@ Menggunakan window Size 10 dan batch size=10(batch_size digunakan menjalankan be
 ## Modeling
 Model yang digunakan adalah model Convolutional LSTM, model ini digunakan karena dapat menangani data yang banyak dan lebih sederhana dalam implementasiannya, disini menggunakan Conv1D dengan pengaturan stride 2, yang memiliki arti perubahan pergerakan per dua data untuk perhitungannya, dengan 2 layer LSTM.<br>
 
-Atur compile data sebelum proses training, dengan ketentuan loss=mean_squared error, dan optimizer yang digunakan Adam , karena adam memiliki tingkat optimizer yang lebih tinggi dan cenderung stabil.
+Atur compile data sebelum proses training, dengan ketentuan loss=mean_squared error, dan optimizer yang digunakan `Adam`, karena `Adam` memiliki tingkat optimizer yang lebih tinggi dan cenderung stabil.
 
 ![model](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/model.png)
 
