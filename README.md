@@ -69,24 +69,18 @@ Diketahui data Volume memiliki nilai minimal 0 maka cek lokasi tersebut dan peny
 
 Data Volume bernilai 0 dikarenakan pada hari itu tidak terjadi proses transaksi
 
-* Visualisasidata variabel 
-    * Visualisasi semua variable dengan histogram
-![var](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/semua.png)
+* Visualisasi data variabel 
+    * Visualisasi semua variable dengan histogram<br>![var](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/semua.png)
 
-* Visualisasi data Close berdasarkan index(rentang taun 2010-2020)
+    * Visualisasi data Close berdasarkan index(rentang taun 2010-2020)<br>![close](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/close.png)
 
-![close](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/close.png)
-
-* Visualisasi data open-close berdasarkan week/minggu dalam data ini ternyata proses dalam satu minggu hanya terjadi 5 kali transaksi saja menggunakan barplot
+    * Visualisasi data open-close berdasarkan week/minggu dalam data ini ternyata proses dalam satu minggu hanya terjadi 5 kali transaksi saja menggunakan barplot
         * close Open Price 
         Data diambil dengan menentukan nilai gap dari close dan open dengan rumus:
 
-        $open close week = (open - close)/close$
+        $open close week = (open - close)/close$<br>![close_open](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/week.png)
 
-        ![close_open](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/week.png)
-        * High Low Price
-
-        ![low_high](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/high_low.png)
+        * High Low Price<br>![low_high](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/high_low.png)
 
 * cek korelasi antar data untuk mengetahui keterkaitan antar variable 
 
