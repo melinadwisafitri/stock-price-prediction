@@ -78,11 +78,11 @@ Data Volume bernilai 0 dikarenakan pada hari itu tidak terjadi proses transaksi
         * close Open Price 
         Data diambil dengan menentukan nilai gap dari close dan open dengan rumus:
 
-        opencloseweek=(open−close)/close<br>![close_open](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/week.png)
+            opencloseweek=(open−close)/close<br>![close_open](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/week.png)
 
         * High Low Price<br>![low_high](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/high_low.png)
 
-* cek korelasi antar data untuk mengetahui keterkaitan antar variable 
+* Cek korelasi antar data untuk mengetahui keterkaitan antar variable 
 
 ![corelation_data](images/heatmap.png)
 Berdasarkan data korelasi diketahui bahwa data memiliki range antara 0 - 1, variable/features yang mengalami korelasi data paling kecil adalah Volume
@@ -94,12 +94,12 @@ Berdasarkan data korelasi diketahui bahwa data memiliki range antara 0 - 1, vari
 Setelah dilakukan pengecekan ternyata tidak ada data yang mengalami outlier, maka tidak perlu dilakukan IQR.
 
 ## Data Preparation
-setelah data di Eksplorasi data akan disiapkan supaya bisa digunakan untuk membuat model.
+Setelah data di Eksplorasi data akan disiapkan supaya bisa digunakan untuk membuat model.
 * Melakukan split data x dan y yang bertujuan y sebagi feature
 split, dengan membuat step = 5 karena disini data yang akan digunakan untuk prediksi diambil per minggu. Kenapa data sibagi hanya 5 step? Karena proses beli dan jual saham dalam seminggu hanya berlangsung dalam 5 hari.
 * Melakukan split data train, test, validation 
 split data harus dilakukan sebelum pembuatan model karena harus tetap mempertahankan beberapa data yang digunakan untuk proses pengujian.<br>
-data yang digunakan adalah data Close saja karena ingin memprediksi close next day, harga penutupan dari saham BCA. Dengan persentase :
+data yang digunakan adalah data *Close* saja karena ingin memprediksi *close next day*, harga penutupan dari saham BCA. Dengan persentase :
     * Split data menjadi:
     * train = 70% 
     * test =  20%
@@ -108,17 +108,16 @@ data yang digunakan adalah data Close saja karena ingin memprediksi close next d
 Split data dilakukan tanpa melakukan random dan shuffle data untuk mengurangi perubahan urutan data
 Setelah proses split data diketahui jumlah dari masing masing data train 1940, test 540 dan val 216
 * Melakukan MinMaxScaler
-Tujuan dari penggunaan MinMaxScaler ini untuk menyesuaikan rentang data 0-1 sehingga bisa mengurangi tingkat error, data yang di scall adalah data train 
+Tujuan dari penggunaan MinMaxScaler ini untuk menyesuaikan rentang data 0-1 sehingga bisa mengurangi tingkat error, data yang di scaler adalah data train .
 
-Proses dialkuakn dengan menggunakan windowed dataset<br>
-Menggunakan windowSize 10 dan batchsize=10(batch_size digunakan menjalankan berapa data yang akan di training untuk setiap epochs misal
-terdapat 1936 data dengan batch sizenya 10 maka 1936/10 = 193 kali untuk setiap epochs)
+Proses dilakukan dengan menggunakan windowed dataset<br>
+Menggunakan window Size 10 dan batch size=10(batch_size digunakan menjalankan berapa data yang akan di training untuk setiap epochs misalkan terdapat 1936 data dengan batch size 10 maka 1936/10 = 193 kali untuk setiap epochs)
 
 
 ## Modeling
 Model yang digunakan adalah model Convolutional LSTM, model ini digunakan karena dapat menangani data yang banyak dan lebih sederhana dalam implementasiannya, disini menggunakan Conv1D dengan pengaturan stride 2, yang memiliki arti perubahan pergerakan per dua data untuk perhitungannya, dengan 2 layer LSTM.<br>
 
-Atur compile data sebelum proses training, dengan ketentuan loss=mean_squared error, dan optimizer yang digunakan Adam , karena adam memiliki tingkat optimizer yang lebih tinggi dan cenderung stabil
+Atur compile data sebelum proses training, dengan ketentuan loss=mean_squared error, dan optimizer yang digunakan Adam , karena adam memiliki tingkat optimizer yang lebih tinggi dan cenderung stabil.
 
 ![model](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/model.png)
 
@@ -126,10 +125,10 @@ Kemudian setelah model terbentuk lakukan training data untuk prosesnya dijalanka
 
 ![plot_training](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/plot_train.png)
 
-Berdasarakan plot diatas data training diatas nilai mae terendah yaitu 0.015 (1.5%)
+Berdasarkan plot diatas data training memiliki nilai mae terendah yaitu 0.015 (1.5%)
 
 ## Evaluation Model
-* Evaluasimodel dilakukan untuk mengetahui bagaimana performa dari data kita dengan menerapkan metric MSE, MAE, dam RMSE
+* Evaluasi model dilakukan untuk mengetahui bagaimana performa dari data kita dengan menerapkan metric MSE, MAE, dam RMSE
 
 * Pertama dilakukan predict data berdasarkan data test data test dilakukan reshape ukuran dimesi menjadi 3 dimensi 
 
@@ -142,13 +141,13 @@ Berdasarakan plot diatas data training diatas nilai mae terendah yaitu 0.015 (1.
 
 Berdasarkan hasil evaluasi error diketahui data presentasi error yaitu 10.74% sedangkan median dari error adalah 9.14% yang mengindikasikan ada berapa data yang memiliki outlier dalam proses prediksi. 
 
-Pesentase MAPE 10.74% presentasi itu menurut Lewis(1982) masih tergolong baik.
+Persentase MAPE 10.74% presentasi itu menurut Lewis(1982) masih tergolong baik.
 
-## Prediction Next Day
+## Prediction *Next Day*
 
 ![prediksi](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/predict.png)
 
-Berdasarkan hasil diatas diketahui data untuk next day masih kurang sesuai karena memiliki nilai yang lebih besar diabandingkan dengan data yang asli
+Berdasarkan hasil diatas diketahui data untuk *next day* masih kurang sesuai karena memiliki nilai yang lebih besar dibandingkan dengan data yang asli
 
 
 
