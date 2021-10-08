@@ -2,14 +2,12 @@
 
 <details>
     <summary>Daftar isi</summary>
-    - [Domain Proyek](#domain-proyek)
-
-    - [Business Understanding](#business-understanding)
-    
-        - [Problem Statements](#problem-statements)
-        - [Goals](#goals)
-        - [Solution statements](#solution-statements)
-    - [Data Understanding](#data-nderstanding)
+    [Domain Proyek](#domain-proyek)
+    [Business Understanding](#business-understanding)
+        [Problem Statements](#problem-statements)
+        [Goals](#goals)
+        * [Solution statements](#solution-statements)
+    [Data Understanding](#data-nderstanding)
     - [Data Eksplotatio](#data-eksploration)
     - [Data Preparation](#data-preparation)
     - [Modeling](#modeling)
