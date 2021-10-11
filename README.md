@@ -157,10 +157,11 @@ Berdasarkan nilai mae yang didapatkan 1e-12 maka nilai error yang didapatkan kec
 
 ## Prediction *Next Day*
 
-Data seharusnya
+<p>Data seharusnya: </p>
+
 ![real_data](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/real_data.png)
 
-Prediction
+Prediction:
 
 ![prediksi](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/predict.png)
 
