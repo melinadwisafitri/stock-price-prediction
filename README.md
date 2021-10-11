@@ -140,7 +140,7 @@ Atur compile data sebelum proses training, dengan ketentuan loss=mean_squared er
 
 Kemudian setelah model terbentuk lakukan training data untuk prosesnya dijalankan sebanyak 10 epochs
 
-![plot_training](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/plot_training.png)
+![plot_training](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/plot_train.png)
 
 Berdasarkan plot diatas data training memiliki nilai mae terendah yaitu 0.015 (1.5%)
 
