@@ -39,7 +39,7 @@ Untuk menyelesaikan permasalahan itu akan dimulai dengan analisis isi dari data 
 
 ### Solution statements
 Untuk menentukan prediksi *price close next day* algoritma yang digunakan adalah *Deep Learning (convolutional LSTM)*, LSTM digunakan karena dapat mengolah data yang besar dengan urutan yang kompleks (*time series*). LSTM bekerja dengan mempelajari urutan data menggunakan blok memori yang terhubung dengan lapisan neuron.
-Sedangkan untuk mengetahui data yang digunakan sesuai dan tidak banyak terdapat error dapat dilakukan dengan exploratory data analysis, dan ketika model sudah selesai training, model akan di evaluasi dengan menggunakan MAE (*Mean Absolute Error*), MAPE(*Mean Percentage Absolute Error*), MDAPE(*Median Absolute Percentage Error*), MSE(*Mean Squared Error*) dan RMSE (*Root Mean Squared Error*). 
+Sedangkan untuk mengetahui data yang digunakan sesuai dan tidak banyak terdapat error dapat dilakukan dengan exploratory data analysis, dan ketika model sudah selesai training, model akan di evaluasi dengan menggunakan MAE (*Mean Absolute Error*).
 
 
 ## Data Understanding
@@ -48,7 +48,7 @@ Data yang digunakan adalah dataset *stock price* dari BCA yang diambil dari tahu
 
 Data yang digunakan berjumlah 2731 data.
 
-![images](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/data_awal.png)
+![images](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/data_awal.png)
 
 Ada beberapa variable dalam data tersebut yaitu:
 
@@ -70,14 +70,14 @@ Setelah pengecekan ternyata tidak ada data yang mengalami missing value
 * mengecek data yang mengalami duplicate
 diketahui bahwa ada sebanyak 30 yang mengalami duplicated
 
-![data_duplicate](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/duplicate.png)
+![data_duplicate](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/duplicate.png)
 
 <br> 
 Untuk mengatasi itu dilakukan penghapusan data yang mengalami duplikat
 
 * cek Deskripsi statistika dengan menggunakan ```data.describe() ```
 
-![descriptive_statistika](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/desc.png)
+![descriptive_statistika](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/desc.png)
 
 Diketahui data Volume memiliki nilai minimal 0 maka cek lokasi tersebut dan penyebab data tersebut bernilai nol
 
@@ -87,17 +87,17 @@ Diketahui data Volume memiliki nilai minimal 0 maka cek lokasi tersebut dan peny
 Data Volume bernilai 0 dikarenakan pada hari itu tidak terjadi proses transaksi
 
 * Visualisasi data variabel 
-    * Visualisasi semua variable dengan histogram<br>![var](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/semua.png)
+    * Visualisasi semua variable dengan histogram<br>![var](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/semua.png)
 
-    * Visualisasi data Close berdasarkan index(rentang taun 2010-2020)<br>![close](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/close.png)
+    * Visualisasi data Close berdasarkan index(rentang taun 2010-2020)<br>![close](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/close.png)
 
     * Visualisasi data open-close berdasarkan week/minggu dalam data ini ternyata proses dalam satu minggu hanya terjadi 5 kali transaksi saja menggunakan barplot
         * close Open Price 
         Data diambil dengan menentukan nilai gap dari close dan open dengan rumus:
 
-            opencloseweek=(open−close)/close<br>![close_open](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/week.png)
+            opencloseweek=(open−close)/close<br>![close_open](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/week.png)
 
-        * High Low Price<br>![low_high](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/high_low.png)
+        * High Low Price<br>![low_high](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/high_low.png)
 
 * Cek korelasi antar data untuk mengetahui keterkaitan antar variable 
 
@@ -106,7 +106,7 @@ Berdasarkan data korelasi diketahui bahwa data memiliki range antara 0 - 1, vari
 
 * Mengecek apakah data Close terdapat oulier atau tidak
 
-![outlier_close](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/close_box.png)
+![outlier_close](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/close_box.png)
 
 Setelah dilakukan pengecekan ternyata tidak ada data yang mengalami outlier, maka tidak perlu dilakukan IQR.
 
@@ -136,35 +136,34 @@ Model yang digunakan adalah model Convolutional LSTM, model ini digunakan karena
 
 Atur compile data sebelum proses training, dengan ketentuan loss=mean_squared error, dan optimizer yang digunakan `Adam`, karena `Adam` memiliki tingkat optimizer yang lebih tinggi dan cenderung stabil.
 
-![model](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/model.png)
+![model](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/model.png)
 
 Kemudian setelah model terbentuk lakukan training data untuk prosesnya dijalankan sebanyak 10 epochs
 
-![plot_training](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/plot_train.png)
+![plot_training](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/plot_train.png)
 
 Berdasarkan plot diatas data training memiliki nilai mae terendah yaitu 0.015 (1.5%)
 
 ## Evaluation Model
-* Evaluasi model dilakukan untuk mengetahui bagaimana performa dari data kita dengan menerapkan metric MSE, MAE, dam RMSE
+* Evaluasi model dilakukan dengan metrik evaluasi, metrik ini berfungsi untuk mengetahui untuk mengukur bagiamana kualitas model yang telah kita buat.
 
-* Pertama dilakukan predict data berdasarkan data test data test dilakukan reshape ukuran dimesi menjadi 3 dimensi 
+MAE digunakan untuk mengetahui melihat training data gagal/rusak karena outlier. 
+![mae](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/mae_rumus.png))
 
-* Lalu dilakukan pengecekan nilai prediksi pada data test
+Didapatkan nilai dari model yaitu : 
+![model_mae](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/mae.png)
 
-* Setelah itu unscaled data prediksi
-
-
-![evaluasi](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/evaluasi.png)
-
-Berdasarkan hasil evaluasi error diketahui data presentasi error yaitu 10.74% sedangkan median dari error adalah 9.14% yang mengindikasikan ada berapa data yang memiliki outlier dalam proses prediksi. 
-
-Persentase MAPE 10.74% presentasi itu menurut Lewis(1982) masih tergolong baik.
+Berdasarkan nilai mae yang didapatkan 1e-12 maka nilai error yang didapatkan kecil. Sehingga model baik digunakan untuk proses prediksi
 
 ## Prediction *Next Day*
 
-![prediksi](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/predict.png)
+Data seharusnya
+![real_data](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/real_data.png)
 
-Berdasarkan hasil diatas diketahui data untuk *next day* masih kurang sesuai karena memiliki nilai yang lebih besar dibandingkan dengan data yang asli
+Prediction
 
+![prediksi](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/predict.png)
+
+Berdasarkan hasil diatas diketahui prediksi untuk tanggal 4-10-21 adalah 56457.074, padahal seharusnya 34800, model harus diperbaiki lagi. Dengan meningkatkan nilai dari window size atau mengatur unit dari LSTM maupun Conv1D.
 
 
