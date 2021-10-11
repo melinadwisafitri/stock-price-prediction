@@ -150,7 +150,7 @@ Berdasarkan plot diatas data training memiliki nilai mae terendah yaitu 0.015 (1
 MAE digunakan untuk mengetahui melihat training data gagal/rusak karena outlier. 
 ![mae](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/mae_rumus.png)
 
-<p>Didapatkan nilai dari model yaitu : </p>
+Didapatkan nilai dari model yaitu : 
 
 ![model_mae](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/mae.png)
 
