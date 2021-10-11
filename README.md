@@ -148,9 +148,9 @@ Berdasarkan plot diatas data training memiliki nilai mae terendah yaitu 0.015 (1
 * Evaluasi model dilakukan dengan metrik evaluasi, metrik ini berfungsi untuk mengetahui untuk mengukur bagiamana kualitas model yang telah kita buat.
 
 MAE digunakan untuk mengetahui melihat training data gagal/rusak karena outlier. 
-![mae](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/mae_rumus.png))
+![mae](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/mae_rumus.png)
 
-Didapatkan nilai dari model yaitu : 
+<p align='center'>Didapatkan nilai dari model yaitu : </p>
 ![model_mae](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/mae.png)
 
 Berdasarkan nilai mae yang didapatkan 1e-12 maka nilai error yang didapatkan kecil. Sehingga model baik digunakan untuk proses prediksi
