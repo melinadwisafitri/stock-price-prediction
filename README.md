@@ -81,7 +81,7 @@ Untuk mengatasi itu dilakukan penghapusan data yang mengalami duplikat
 
 Diketahui data Volume memiliki nilai minimal 0 maka cek lokasi tersebut dan penyebab data tersebut bernilai nol
 
- !['loc_vol_0](https://github.com/melinadwisafitri/BCA_Stock_price/blob/master/images/vol0.png)
+ !['loc_vol_0](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/vol0.png)
 
 
 Data Volume bernilai 0 dikarenakan pada hari itu tidak terjadi proses transaksi
