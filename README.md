@@ -21,7 +21,9 @@
 Dalam bidang perekonomian suatu negara dipengaruhi oleh pasar saham/modal yang didalamnya terdapat proses jual beli daham sesuai dengan harga yang ada dipasar.<br>
 
 Melihat kondisi pasar saham dalam negeri khusus nya BCA setiap harinya mengalami naik turun tidak menentu maka perlu untuk mempelajari data masa lalu dari perbankan, untuk strategi investasi kedepannya. Sehingga Investor dapat melakukan analisis terhadap perusahaan yang akan diinvestasikan. <br> 
-sumber = [ANALISIS PREDIKSI HARGA SAHAM SEKTOR PERBANKAN 
+Domain dalam projek ini adalah perbankan.
+Referensi:
+* [ANALISIS PREDIKSI HARGA SAHAM SEKTOR PERBANKAN 
 MENGGUNAKAN ALGORITMA LONG-SHORT TERMS MEMORY
 (LSTM)](http://www.jurnal.upnyk.ac.id/index.php/semnasif/article/view/4135)<br>
 Maka perlu dilakukanlah proses pengolahan dan pelatihan data menggunakan suatu algoritma sehingga data tersebut dapat digunakan untuk memprediksi harga saham untuk *next day*. 
@@ -34,8 +36,8 @@ Untuk menyelesaikan permasalahan itu akan dimulai dengan analisis isi dari data 
 - Bagaimana cara menentukan prediksi price close untuk next day menggunakan *time series*?
 
 ### Goals
-- Proyek ini bertujuan untuk memprediksi harga *close* untuk harga saham BCA, dengan mengimplementasikan *machine learning* didalamnya sehingga lebih mempermudah proses.
-- Membentuk model yang optimal dengan data *Time Series*
+- Mengetahui data yang digunakan memiliki tingkat error yang besar atau tidak dan menentukan apa algoritma yang sesuai untuk menetukan prediksi price close khususnya algoritma yang bisa menangani time series.
+- Membentuk suatu model yang bisa digunakan untuk memprediksi harga close untuk hari selanjutnya. 
 
 ### Solution statements
 Untuk menentukan prediksi *price close next day* algoritma yang digunakan adalah *Deep Learning (convolutional LSTM)*, LSTM digunakan karena dapat mengolah data yang besar dengan urutan yang kompleks (*time series*). LSTM bekerja dengan mempelajari urutan data menggunakan blok memori yang terhubung dengan lapisan neuron.
@@ -101,7 +103,7 @@ Data Volume bernilai 0 dikarenakan pada hari itu tidak terjadi proses transaksi
 
 * Cek korelasi antar data untuk mengetahui keterkaitan antar variable 
 
-![corelation_data](images/heatmap.png)
+![corelation_data](https://github.com/melinadwisafitri/BCA_Stock_price/raw/master/images/heatmap.png)
 Berdasarkan data korelasi diketahui bahwa data memiliki range antara 0 - 1, variable/features yang mengalami korelasi data paling kecil adalah Volume
 
 * Mengecek apakah data Close terdapat oulier atau tidak
