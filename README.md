@@ -39,7 +39,7 @@ Untuk menyelesaikan permasalahan itu akan dimulai dengan analisis isi dari data 
 - Bagaimana cara menentukan prediksi price close untuk next day menggunakan *time series*?
 
 ### Goals
-- Mengetahui data yang digunakan memiliki tingkat error yang besar atau tidak dan menentukan apa algoritma yang sesuai untuk menetukan prediksi price close khususnya algoritma yang bisa menangani time series.
+- Mengetahui data yang digunakan memiliki tingkat error yang besar atau tidak dan menentukan algoritma yang sesuai untuk menentukan prediksi price close khususnya algoritma yang bisa menangani time series.
 - Membentuk suatu model yang bisa digunakan untuk memprediksi harga close untuk hari selanjutnya. 
 
 ### Solution statements
