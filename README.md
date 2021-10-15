@@ -22,10 +22,13 @@ Dalam bidang perekonomian suatu negara dipengaruhi oleh pasar saham/modal yang d
 
 Melihat kondisi pasar saham dalam negeri khusus nya BCA setiap harinya mengalami naik turun tidak menentu maka perlu untuk mempelajari data masa lalu dari perbankan, untuk strategi investasi kedepannya. Sehingga Investor dapat melakukan analisis terhadap perusahaan yang akan diinvestasikan. <br> 
 Domain dalam projek ini adalah perbankan.
+
 Referensi:
 * [ANALISIS PREDIKSI HARGA SAHAM SEKTOR PERBANKAN 
 MENGGUNAKAN ALGORITMA LONG-SHORT TERMS MEMORY
 (LSTM)](http://www.jurnal.upnyk.ac.id/index.php/semnasif/article/view/4135)<br>
+
+
 Maka perlu dilakukanlah proses pengolahan dan pelatihan data menggunakan suatu algoritma sehingga data tersebut dapat digunakan untuk memprediksi harga saham untuk *next day*. 
 
 ## Business Understanding
