@@ -42,7 +42,7 @@ Untuk menyelesaikan permasalah dalam menemukan tempat lokasi wisata yaitu dengan
 * Mengahasikan beberapa rekomendasi tempat dengan teknik *Content based Filtering* dan teknik *Colaborative Filtering* berdasarkan data yang sudah di dapatkan.
 
 ### Solution statements
-* Data dapat dicari dengan berbagai cara salah satunya dengan mengambil data dati [kaggel](https://kaggle.com) setelah data di dapatkan data akan di eksplorasi untuk mengecek data tersebut memiliki missing value atau tidak.
+* Data dapat dicari dengan berbagai cara salah satunya dengan mengambil data dari [kaggle](https://kaggle.com) setelah data di dapatkan data akan di eksplorasi untuk mengecek data tersebut memiliki missing value atau tidak.
 * Untuk membuat sistem rekomendasi berdasarkan nama bisa digunakan teknik *content based filtering* dengan memanfaatkan *TFIDF Vectorizer* kemudian menggunakan *cosine similarity* untuk menarcari kesamaan antar nama tempat.
 * Sedangkan untuk memberikan rekomendasi user berdasarkan referensi user lain yang telah datang/menggunakan digunakan teknik *Colaborative filtering* dengan mengambil nilai rating yang telah diberikan pengguna.
 
@@ -59,6 +59,7 @@ Data ini terdiri dari 4 file yaitu :
 
 ### Univariate Eksplorasi Data
 Setiap file akan di deklarasikan dalam varibale dataframe.
+#### Eksplorasi data Package Tourism
 Data terdiri dari 100 row yang berisi kolom :
 1. Package          : id package
 2. City             : Lokasi tempat wisata
@@ -68,10 +69,21 @@ Data terdiri dari 100 row yang berisi kolom :
 6. Place_Tourism4   : lokasi 4
 7. Place_Tourism5   : lokasi 5
 
-![package-tourism.csv]()
+![package-tourism.csv](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/package.png)
 
-#### Eksplorasi data Package Tourism
+Kolom package memiliki type data integer sedangkan kolom data yang lain memiliki type data object/string.
+
 #### Eksplorasi data User
+<div align="center">
+<img src ="https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/package.png" >
+</div>
+
+Data User memiliki 300 row dengan 3 kolom:
+1. User_id : merupakan kolom yang berisi mengenai id dari user
+2. Location : kolom ini berisi tentang lokasi/alamat dari user berdasarkan kota dan provinsi
+3. Age : Kolom ini berisi mengenai umur dari user
+
+Data ini bersifat dummy. type data User_id dan Age adalah integer sedangkan data Location adalah Object/string.
 #### Eksplorasi data Tourism Ratings
 #### Eksplorasi data Tourism with id
 
