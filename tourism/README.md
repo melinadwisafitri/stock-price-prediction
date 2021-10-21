@@ -75,7 +75,7 @@ Data terdiri dari 100 row yang berisi kolom :
 Kolom package memiliki type data integer sedangkan kolom data yang lain memiliki type data object/string.
 
 #### Eksplorasi data User
-![user-data.csv]("https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/package.png")
+![user-data.csv]("https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/user.png")
 
 Data User memiliki 300 row dengan 3 kolom:
 1. User_id : merupakan kolom yang berisi mengenai id dari user
@@ -133,10 +133,68 @@ tourism_inform = tourism_info.loc[:, ~tourism_info.columns.str.contains('^Unname
 Kemudian cek data tourism_info ini apakah terdapat ada missing atau tidak teryata data time_minutes memiliki 205 data nan, karena kalau data dari row yang mengalami missing value tersebut dihapus maka data akan hilang sebagian, untuk mengatasi itu makan kolom Time_minutes akan di drop.
 
 ## Content Based Filtering
-
+Teknik ini digunakan untuk memberi rekomendasi berdasarkan history dari pengguna itu sendiri.
 ### Data Preparation
+Data yang digunakan adalah data rating dari user,data user serta data tourism info.
+Setelah di cek dalam proses ekplorasi data informasi tempat hanya berada pada file tourism_ with_id.csv. Data tersebut akan digabung dengan data rating, penggabungan dilakukan berdasarkan place ID. 
+
+![Data-merge](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/data-p1.png)
+
+Data kemudian di cek apakah data hasil *merge* terdapat missing value apa tidak. Jika ada maka data akan di drop atau impute.
+
+![Data-cek_ms](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/data-p-cekms.png)
+
+Tidak ada data yang mengalamu missing value di dalam data merge tersebut.
+
+Data akan dimerge kembali, data tourism_inform yang akan akan digunakan hanya akan diambil id_place, place_name, city dan categorinya saja. Data itu akan di gabung degan data rating.
+
+![Data-merge](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/data-p-merge.png)
+
+Karena data yang akan digunakan untuk merekomendasikan tempat wisata diambil dari nama city maka data city di cek.
+
+```
+tourism_spot.City.unique()
+```
+
+Setelah di cek ternya ada 5 kota dalam data ini yaitu, yogyakarta, semarang, jakarta, Bandung, dan Surabaya. 
+
+Untuk membuat data berurutan berdasarkan id place maka di lakukan `sort_values` berdasarkan place id. Data juga di cek apakah ada data yang mengalami duplicate atau tidak berdasarkan place_id yang ada.
+Ternyata terdapat 9563 data yang mengalami duplikasi. Maka data tersebut akan dihapus. 
+
+![Drop-duplicated](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/drop-duplicated.png)
+
+Data berkurang menjadi 437 dari data awal yang berjumlah 10000. Data tersebut akan disimpan di dalam sebuah dictionary untuk digunak dalam proses pembuatan model dalam sistem rekomendasi.
+
+![Data-dict](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/data-dict.png)
+
+(Data setelah dibuat menjadi dictionary)
+
+#### TFIDF 
+
+Data di convert menjadi matrix dengan menggunkan ``TfidfVectorizer()`` Data yang akan digunakan sebagai matrix adalah data city. Data tersebut akan di `fit_transform` untuk mempelajari kosakata yang ada diubah menjadi data matrix. Data matrix tersebut akan dibuat sebuah dataframe untuk melihat korelasi antara data nama lokasi wisata dengan data kota. Untuk memasukkan data metrix kedalam satu dataframe dimanfaatakan fungsi `to_dense`.
+
+![to-dense](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/to-dense.png)
+
+Data diatas terlihat bahwa Pantai Glagah berkorelasi dengan Yogyakarta yang mengindikasikan bahwa Pantai Glagah terdapat di yogyakarta
+
+#### Cosine Similarity
+Berfungsi untuk menghitung kesamaan kata antar nama lokasi wisata. 
+
+![cosine](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/cosine.png)
+
+Data akan dirubah menjadi array data yang digunakan untuk cosine_similarity adalah data matrix yang sebelumnya sudah dirubah yang awalnya data biasa dirubah menjadi aaray.
+
+![Similarity](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/isimilarity.png)
+
+Data hasil similarity akan disimpan di dalam varible baru dimana data ini yang akan digunakan untuk membangun model nanti.
+
+![similariry1](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/isimilarity1.png)
 
 ### Modeling
+model dibangun dengan mengambil data nama tempat dan menggunakan similariry untuk memberikan reomendasi data yang direkomendasikan diatur hanya menampilkan 20 data saja yang berisi informasi place name dan place_city saja.
+
+Data yang diambil untuk dilihat rekomendasinya adalah nama lokasi <em>Pulau Pramuka<em>
+
 
 ### Evaluation Model
 
