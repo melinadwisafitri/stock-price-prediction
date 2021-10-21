@@ -1,6 +1,6 @@
 # Laporan Proyek Machine Learning - Melina Dwi Saitri
 
-<detail>
+<details>
 <summary>Daftar Isi</summary>
 
 - [Domain Proyek](#domain-proyek)
@@ -12,7 +12,8 @@
     - [Eksplorasi Data](#eksplorasi-data)
 - [Content Based FIltering](#content-based-filtering)
     - [Data Preparation](#data-preparation)
-</detail>
+
+</details>
 
 ## Project Overview
 Pariwisata adalah kegiatan berkunjung ke suatu tempat lain dengan tujuan mancari suana baru. Pariwisata juga salah satu penghasil devisi yang tinggi untuk daerah sehingga sektor pariwasata terus ditingkatkan. Tetapi karena banyaknya lokasi wisata di daerah yang belum terekspos dan dikenal orang membuat orang kesulitan mencari lokasi wisata yang menarik untuk dikunjungi. 
@@ -69,23 +70,67 @@ Data terdiri dari 100 row yang berisi kolom :
 6. Place_Tourism4   : lokasi 4
 7. Place_Tourism5   : lokasi 5
 
-![package-tourism.csv](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/package.png)
+![package-tourism.csv](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/user.png)
 
 Kolom package memiliki type data integer sedangkan kolom data yang lain memiliki type data object/string.
 
 #### Eksplorasi data User
-<div align="center">
-<img src ="https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/package.png" >
-</div>
+![user-data.csv]("https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/package.png")
 
 Data User memiliki 300 row dengan 3 kolom:
 1. User_id : merupakan kolom yang berisi mengenai id dari user
 2. Location : kolom ini berisi tentang lokasi/alamat dari user berdasarkan kota dan provinsi
 3. Age : Kolom ini berisi mengenai umur dari user
 
-Data ini bersifat dummy. type data User_id dan Age adalah integer sedangkan data Location adalah Object/string.
+Data ini bersifat dummy. type data User_id dan Age adalah integer sedangkan data Location adalah Object/string. Data akan divisualisaskikan berdasarkan id user dan lokasi/alamat user berdasarkan provinsi. Maka data Lokasi akan dipecah menjadi kota dan provisi. 
+````
+tourism_user[['kota', 'provinsi']] = tourism_user['Location'].str.split(',', expand=True)
+````
+
+![user-data-split-location](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/user-loc.png)
+
+Kemudian data akan divisualisasikan ke dalam bar plot dengan ketentuann id sebagai height, bertujuan untuk mengetahui dari mana saja user berasal.
+
+![user-data-plot](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/user-plot.png))
+
+User berasal dari Jawa tengah, Jawa Barat, Sumatera Selatan, DKI Jakarta, Jawa Timur, DIY dan Banten.
 #### Eksplorasi data Tourism Ratings
+![Data-Ratings](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/ratings.png)
+
+Data tersebut memiliki 1000 row dan 3 kolom dengan type data integer semua 
+* user id = untuk id user
+* place id = untuk id dari tempat/lokasi wisata
+* Place rating = untuk rating setiap lokasi yang diberikan user
+
+Data akan di deskripsikan berdasarkan statistika menghasilakn min dari ratings 1.0 dan max adalah 5.0. Seharusnya data User_Id dan Place_id tidak boleh masuk ke descripsi statiska, masuk karena data memiliki type data integer.
+
+![rating-describe](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/rating-desc.png)
 #### Eksplorasi data Tourism with id
+![Data-Tourisn-info](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/tourism.png)
+
+Data memiliki 437 row dengan 13 kolom tetapi ada 2 kolom yang tidak bernama maka kolom tersebut aka dihapus karena tidak diketahui itu jenis data apa.
+
+![tourism-info](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/tourism-info.png)
+
+- Place-Id : id untuk tempat wisata
+- Place_Name: Nama dari lokasi wisata
+- Description: penjelasan singkat mengenai tempat wisata tersebut
+- Category: wisata termasuk dalam kategori apa(budaya, taman-hiburan dll)
+- City: Lokasi tempat wisata(kota)
+- Price: biaya masuk ke lokasi wisata 
+- Rating : tingkat kepuasan pelanggan
+- Time_Minutes: waktu perjalanan
+- Coordinate: koordinat dari lokasi wisata
+- Lat: Garis Lintang
+- Long: Garis Bujur
+
+Untuk membuang kolom yang tidak diketahui itu kolom apa dengan menggunakan script
+
+```
+tourism_inform = tourism_info.loc[:, ~tourism_info.columns.str.contains('^Unnamed')]
+```
+
+Kemudian cek data tourism_info ini apakah terdapat ada missing atau tidak teryata data time_minutes memiliki 205 data nan, karena kalau data dari row yang mengalami missing value tersebut dihapus maka data akan hilang sebagian, untuk mengatasi itu makan kolom Time_minutes akan di drop.
 
 ## Content Based Filtering
 
