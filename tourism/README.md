@@ -197,7 +197,8 @@ Data yang diambil untuk dilihat rekomendasinya adalah nama lokasi <b>Pulau Pramu
 
 ![Data-pulau](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/data-asli.png)
 
-Data yang direkomendasikan memiliki nilai kota yang sama yaitu Jakarta
+Data yang direkomendasikan memiliki nilai kota yang sama yaitu Jakarta.
+
 ![Data-pulau](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/rekomendasi.png)
 ### Evaluation Model
 ![precision](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/eval-latex.png)
@@ -210,8 +211,22 @@ print(f'precission: {precision} %')
 
 Setelah dihitung ternyata data 20/20 = 1 atau data memiliki nilai precision yang baik. Sehingga model maupun data baik untuk digunakan dalam membuat sistem rekomendasi berdasarkan content.
 ## Colaborative Filtering
+Tenik ini digunakan untuk merekomendasikan user berdasarkan user_group atau bebeberapa user lain. Data yang digunakan adalah data rating yang sudah diberikan oleh pengguna/user.
+### Data understanding Colaborative Filtering
+Data yang digunakan adalah data rating data ini memili row 1000 dan kolom 3.
 
+![rating](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/ratings.png)
 ### Data Preparation Colaborative FIltering
+Data yang digunakan adalah data user_id dan id place yang terdapat pada rating, data tersebut awalnya bertype int, untuk melakukan encoder maka data tersebut dirubah typenya menjadi string/object. Kemudian data place_id dan user_ di encode untuk dirubah menjadi index.
+
+![encode](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/encode.png)
+
+Data hasil encode akan dihitung jumlahnya jumlah data ini nanti yang akan digunakan untuk proses modeling nanti. Data place_rating akan di minmaxScaler secara manual dengan memanfaatkan nilai min dan max dari data place_rating 
+
+
+\begin{align}
+(data - min)/(max- min)
+\end{align}
 
 ### Modeling Colaborative FIltering
 
