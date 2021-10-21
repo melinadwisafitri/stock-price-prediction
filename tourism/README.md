@@ -195,11 +195,20 @@ model dibangun dengan mengambil data nama tempat dan menggunakan similariry untu
 
 Data yang diambil untuk dilihat rekomendasinya adalah nama lokasi <b>Pulau Pramuka</b>
 
-![Data pulau]
+![Data-pulau](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/data-asli.png)
 
-
+Data yang direkomendasikan memiliki nilai kota yang sama yaitu Jakarta
+![Data-pulau](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/rekomendasi.png)
 ### Evaluation Model
+![precision](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/eval-latex.png)
 
+Berdasarkan hasil rekomdasi diatas diketahui bahwa data yang memiliki nama kota yang sama dengan pulau pramuka adalah semuanya maka data tersebut akan dibagi dengan jumlah data yang direkomendasikan.
+```
+precision = (len(recomended['place_city'] == 'Jakarta')/len(recomended))*100
+print(f'precission: {precision} %')
+```
+
+Setelah dihitung ternyata data 20/20 = 1 atau data memiliki nilai precision yang baik. Sehingga model maupun data baik untuk digunakan dalam membuat sistem rekomendasi berdasarkan content.
 ## Colaborative Filtering
 
 ### Data Preparation Colaborative FIltering
