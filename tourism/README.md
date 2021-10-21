@@ -195,6 +195,8 @@ model dibangun dengan mengambil data nama tempat dan menggunakan similariry untu
 
 Data yang diambil untuk dilihat rekomendasinya adalah nama lokasi <b>Pulau Pramuka</b>
 
+![Data pulau]
+
 
 ### Evaluation Model
 
