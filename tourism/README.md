@@ -70,12 +70,12 @@ Data terdiri dari 100 row yang berisi kolom :
 6. Place_Tourism4   : lokasi 4
 7. Place_Tourism5   : lokasi 5
 
-![package-tourism.csv](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/user.png)
+![package-tourism.csv](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/package.png)
 
 Kolom package memiliki type data integer sedangkan kolom data yang lain memiliki type data object/string.
 
 #### Eksplorasi data User
-![user-data]("https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/user.png")
+![user-data](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/user.png)
 
 Data User memiliki 300 row dengan 3 kolom:
 1. User_id : merupakan kolom yang berisi mengenai id dari user
