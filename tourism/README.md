@@ -221,19 +221,42 @@ Data yang digunakan adalah data user_id dan id place yang terdapat pada rating, 
 
 ![encode](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/encode.png)
 
-Data hasil encode akan dihitung jumlahnya jumlah data ini nanti yang akan digunakan untuk proses modeling nanti. Data place_rating akan di minmaxScaler secara manual dengan memanfaatkan nilai min dan max dari data place_rating 
+Data hasil encode akan dihitung jumlahnya jumlah data ini nanti yang akan digunakan untuk proses modeling nanti. Data place_rating akan di minmaxScaler secara manual dengan memanfaatkan nilai min dan max dari data place_rating. 
 
 
-\begin{align}
 (data - min)/(max- min)
-\end{align}
+
+```
+rating = colaborative_filtering['Place_Ratings'].apply(
+    lambda u: (u - min_r )/(max_r-min_r)
+).values
+```
+#### split data train dan val
+Data akan dipecah menggunakan train_test_split dengan kriteria data train 80% dan val 20% didapatkan jumlah train 8000 dan val adalah 2000.
 
 ### Modeling Colaborative FIltering
 
-#### Ploting model Colaborative FIltering
+Setelah data berhasil di periapkan dilanjutkan dengan membuat model baru dengan memanfaakan tensorflow berdasarkan proses embeding dari user_id dan place_id, dengan menggunakan perkalian dot product [0, 1] menggunakan sigmoid sebagai aktivasi. regulasi yang digunakan adalah li digunakan untuk mengetahui berdasarakan nilai median dari data. 
+
+Model yang telah dibangun diberikan nilai berdasarkan jumlah data encode user_id dan data jumlah encode place_id. Dengan embeding sizenya 128(ini disesuaikan dengan kebutuhan model).
+
+Sedangkan optimizer yang digunakan untuk model adalah Adam dengan learning rate 1e-4 dengan metricsnya MAE. Model di training dengan menggunakan batchnya 5 dan ephochs nya 50.
+
+![plot](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/plot.png)
+
+diketahui bahwa nilai mae terendah adalah 0.2514 (25%) nilai ini cukup rendah tetapi nilai val menaik ketika nilai mae menurun. Hal ini bisa mengakibatkan model overfitting.
 
 ### Evaluation Model Colaborative FIltering
+Evaluasi dilakukan untuk mengetahui bagaimana tingkat error data sehingga bisa mengetauhi bagaimana performa dari data. Evaluasi menggunakan metrics MSE. 
+
+![mae](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/mae-rumus.png)
+
+Nilai mae yang di dapatkan tidak terlalu tinggi sehingga data ini cocok untuk digunakan dalam sistem rekomendasi, tetapi mae dengan nilai 31% terbilang cukup tinggi sehingga bisa mengakibatkan overfitting data.
+
 
 ### Prediction 
+Untuk pengujian dari evaluasi model kita maka diperlukan pengujian. Proses pengujian dapat dilakukan dengan menggunakan data tourism info yang sudah di proses sebelumnya, dan data tersebut disimpan dalam variable data berjenis dictionary. 
 
-## Kesimpulan
+Rekomendasi dari user 284(kenapa 284 karena data yang dimabil contoh acak berdasarkan id user pada data rating) mengatakan nilai rating tertinggi adalah Museum Sumpah Pemuda : Jakarta padahal kalau dilihat di data yang pernah dikunjungi data dengan rating 5 lebih dari sisem belum bisa menampilkan semua data yang bernilai rating tinggi.
+
+![hasil](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/rekomendasi-c.png)
