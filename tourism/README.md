@@ -249,7 +249,7 @@ diketahui bahwa nilai mae terendah adalah 0.2514 (25%) nilai ini cukup rendah te
 ### Evaluation Model Colaborative FIltering
 Evaluasi dilakukan untuk mengetahui bagaimana tingkat error data sehingga bisa mengetauhi bagaimana performa dari data. Evaluasi menggunakan metrics MSE. 
 
-![mae](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/mae-rumus.png)
+![mae](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/mae_rumus.png)
 
 Nilai mae yang di dapatkan tidak terlalu tinggi sehingga data ini cocok untuk digunakan dalam sistem rekomendasi, tetapi mae dengan nilai 31% terbilang cukup tinggi sehingga bisa mengakibatkan overfitting data.
 
