@@ -75,7 +75,7 @@ Data terdiri dari 100 row yang berisi kolom :
 Kolom package memiliki type data integer sedangkan kolom data yang lain memiliki type data object/string.
 
 #### Eksplorasi data User
-![user-data.csv]("https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/user.png")
+![user-data]("https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/user.png")
 
 Data User memiliki 300 row dengan 3 kolom:
 1. User_id : merupakan kolom yang berisi mengenai id dari user
@@ -161,7 +161,7 @@ Setelah di cek ternya ada 5 kota dalam data ini yaitu, yogyakarta, semarang, jak
 Untuk membuat data berurutan berdasarkan id place maka di lakukan `sort_values` berdasarkan place id. Data juga di cek apakah ada data yang mengalami duplicate atau tidak berdasarkan place_id yang ada.
 Ternyata terdapat 9563 data yang mengalami duplikasi. Maka data tersebut akan dihapus. 
 
-![Drop-duplicated](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/drop-duplicated.png)
+![Drop-duplicated](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/drop-duplicate.png)
 
 Data berkurang menjadi 437 dari data awal yang berjumlah 10000. Data tersebut akan disimpan di dalam sebuah dictionary untuk digunak dalam proses pembuatan model dalam sistem rekomendasi.
 
@@ -184,16 +184,16 @@ Berfungsi untuk menghitung kesamaan kata antar nama lokasi wisata.
 
 Data akan dirubah menjadi array data yang digunakan untuk cosine_similarity adalah data matrix yang sebelumnya sudah dirubah yang awalnya data biasa dirubah menjadi aaray.
 
-![Similarity](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/isimilarity.png)
+![Similarity](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/similarity.png)
 
 Data hasil similarity akan disimpan di dalam varible baru dimana data ini yang akan digunakan untuk membangun model nanti.
 
-![similariry1](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/isimilarity1.png)
+![similariry1](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/similarity1.png)
 
 ### Modeling
 model dibangun dengan mengambil data nama tempat dan menggunakan similariry untuk memberikan reomendasi data yang direkomendasikan diatur hanya menampilkan 20 data saja yang berisi informasi place name dan place_city saja.
 
-Data yang diambil untuk dilihat rekomendasinya adalah nama lokasi <em>Pulau Pramuka<em>
+Data yang diambil untuk dilihat rekomendasinya adalah nama lokasi <b>Pulau Pramuka</b>
 
 
 ### Evaluation Model
