@@ -241,20 +241,20 @@ Sedangkan optimizer yang digunakan untuk model adalah Adam dengan learning rate 
 
 ![plot](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/plot.png)
 
-diketahui bahwa nilai mae terendah adalah 0.2465 (25%) nilai ini cukup rendah tetapi nilai val menaik ketika nilai mae menurun. Hal ini bisa mengakibatkan model overfitting.
+Diketahui nilai mae terendah adalah 0.2465 (25%) nilai ini cukup rendah tetapi nilai val menaik ketika nilai mae menurun. Hal ini bisa mengakibatkan model *overfitting*.
 
 ### Evaluation Model Collaborative FIltering
-Evaluasi dilakukan untuk mengetahui bagaimana tingkat error model sehingga bisa mengetauhi bagaimana performa dari model yang dibuat. Evaluasi menggunakan metrics MSE. 
+Evaluasi dilakukan untuk mengetahui bagaimana tingkat error model sehingga bisa mengetahui bagaimana performa dari model yang dibuat. Evaluasi menggunakan metrics MSE. 
 
 ![mae](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/mae_rumus.png)
 
-Nilai mae yang di dapatkan tidak terlalu tinggi sehingga model ini cocok untuk digunakan dalam sistem rekomendasi, tetapi mae dengan nilai 34% tetapi bisa mengakibatkan overfitting data.
+Nilai mae yang didapatkan tidak terlalu tinggi sehingga model ini cocok untuk digunakan dalam sistem rekomendasi, tetapi mae dengan nilai 34% bisa mengakibatkan *overfitting *model.
 
 
 ### Prediction 
-Untuk pengujian dari evaluasi model,maka diperlukan pengujian. Proses pengujian dapat dilakukan dengan menggunakan data tourism info yang sudah di proses sebelumnya, dan data tersebut disimpan dalam variable data berjenis dictionary. 
+Untuk pengujian dari evaluasi model,maka diperlukan pengujian. Proses pengujian dapat dilakukan dengan menggunakan data tourism info yang sudah diproses sebelumnya, dan data tersebut disimpan dalam variable data berjenis dictionary. 
 
-Rekomendasi dari user 225(kenapa 284 karena data yang dimabil contoh acak berdasarkan id user pada data rating) mengatakan top 3 rating tertinggi adalah:
+Rekomendasi dari user 225(kenapa 284 karena data yang diambil contoh acak berdasarkan id user pada data rating) mengatakan top 3 rating tertinggi adalah:
 * Kampung Wisata Taman Sari : Taman Hiburan
 * Pantai Watu Kodok : Bahari
 * Curug Cimahi : Cagar Alam 
@@ -262,4 +262,4 @@ Data hanya ditampilkan top 3 saja, jumlah berapa banyak data ditampilkan dapat d
 
 ![hasil](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/rekomendasi-c.png)
 
-Kemudian sistem akan merekomendasikan 5 tempat lainnya yang memiliki nilai yang sama.
+Kemudian sistem akan merekomendasikan 5 tempat lainnya yang memiliki nilai yang sama berdasarkan penilaian user.
