@@ -21,7 +21,7 @@ Pariwisata adalah kegiatan berkunjung ke suatu tempat lain dengan tujuan mencari
 Sehingga diperlukan sebuah sistem rekomendasi yang bisa membantu orang untuk menemukan tempat wisata yang menarik berdasarkan nama (menggunakan lokasi/kota sebagai penentu), history data ([G. Fenza, E. Fischetti, D. Furno, V. Loia : 2011](https://ieeexplore.ieee.org/abstract/document/6007604/)), maupun *rating* yang diberikan orang.
 
 ## Domain Proyek
-Domain dalam proyek ini adalah pariwisata, disesuaikan dengan permasalah yang ada di Indonesia, untuk mempermudah menemukan lokasi wisata menggunakan sistem rekomendasi.
+Domain dalam proyek ini adalah pariwisata, disesuaikan dengan permasalahan yang ada di Indonesia, untuk mempermudah menemukan lokasi wisata menggunakan sistem rekomendasi.
 
 ## Business Understanding
 
@@ -40,7 +40,7 @@ Untuk menyelesaikan permasalah dalam menemukan tempat lokasi wisata yaitu dengan
 ### Solution statements
 
 * Untuk memberikan rekomendasi user berdasarkan lokasi yang pernah dikunjungi yaitu dengan menggunakan teknik *content based filtering* dengan mengambil kesamaan nilai/kata dari salah satu item yang ada.
-* Untuk memberikan rekomendasi user berdasarkan rating suatu tepat dapat dilakukan dengan memanfaatkan  teknik *Colaborative filtering*, menggunakan algoritma Deep Learning untuk kasus NLP(Natural Language Processing), Embedding layers.
+* Untuk memberikan rekomendasi user berdasarkan rating suatu tepat dapat dilakukan dengan memanfaatkan  teknik *Colaborative filtering*, menggunakan algoritma Deep Learning dan Embedding layers.
 
 
 ## Data Understanding
@@ -140,14 +140,14 @@ Data Time_minutes memiliki 205 data *missing value*, karena data yang mengalami 
 
 ![information-fix](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/tourism-finish.png)
 
-## Content Based Filtering
-Teknik ini digunakan untuk memberi rekomendasi berdasarkan *history* dari pengguna itu sendiri.
-### Data Preparation
 
+Teknik ini digunakan untuk memberi rekomendasi berdasarkan *history* dari pengguna itu sendiri.
+## Data Preparation
+### Content Based Filtering
 Data yang digunakan adalah data tourism_with_id/tourism_inform(place_id, place_name dan place_city). Yang akan disimpan ke dalam variable baru.
 
 
-![Data-merge](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/data-p-content.png)
+![Data-merge](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/data_p_content.png)
 
 #### TFIDF 
 
@@ -170,39 +170,13 @@ Data hasil similarity akan disimpan di dalam variable baru di mana data ini yang
 
 ![similariry1](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/similarity1.png)
 
-### Modeling
-Model dibangun dengan mengambil data nama tempat dan menggunakan similarity untuk memberikan rekomendasi data yang direkomendasikan diatur hanya menampilkan 10 data saja yang berisi informasi place name dan place_city saja.
-
-Data yang diambil untuk dilihat rekomendasinya adalah nama lokasi <b>Pantai Ancol</b>
-
-![Data-pulau](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/data-asli.png)
-
-Data yang direkomendasikan memiliki nilai kota yang sama yaitu Jakarta.
-
-![Data-pulau](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/rekomendasi.png)
-
-### Evaluation Model
-![precision](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/eval-latex.png)
-
-Berdasarkan hasil rekomendasi diketahui bahwa hasil rekomendasi memiliki nama kota yang sama yaitu Jakarta, untuk menghitung ketepatan dari model dengan menggunakan rumus berikut: 
-
-```
-precision = (len(recomended['place_city'] == 'Jakarta')/len(recomended))*100
-print(f'precission: {precision} %')
-```
-
-Setelah dihitung ternyata memiliki hasil precision 10/10 = 1, data memiliki nilai precision yang baik. Sehingga model maupun data baik untuk digunakan dalam membuat sistem rekomendasi berdasarkan content. Model ini hanya merekomendasikan berdasarkan history lokasi/kota. Untuk meningkatkan bisa dengan melakukan rekomendasi berdasarkan kategori tempat wisata.
-
 
 ## Collaborative Filtering
-Tenik ini digunakan untuk merekomendasikan user berdasarkan user_group atau bebeberapa user lain. Data yang digunakan adalah data rating dan data_inform yang sudah diberikan oleh pengguna/user.
 ### Data understanding Collaborative Filtering
 Data yang digunakan adalah data rating, yang memiliki baris 1000 dan kolom 3.
 
 ![rating](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/ratings.png)
 
-
-### Data Preparation Collaborative FIltering
 Data Rating akan digabungkan dengan data tourism_inform ( place_id, place_Name, City, Category dan Rating). Data disesuaikan dengan place_Id.
 
 ![Merge](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/merge_col.png)
@@ -224,6 +198,17 @@ Sebelum data dipecah data place_rating akan di normalisasi terlebih dahulu mengg
 
 Lalu data dipecah menggunakan train_test_split dengan kriteria data train 80% dan val 20% didapatkan jumlah train 8000 dan val adalah 2000.
 
+## Modeling
+### Content Based Filtering
+Model dibangun dengan mengambil data nama tempat dan menggunakan similarity untuk memberikan rekomendasi data yang direkomendasikan diatur hanya menampilkan 10 data saja yang berisi informasi place name dan place_city saja.
+
+Data yang diambil untuk dilihat rekomendasinya adalah nama lokasi <b>Pantai Ancol</b>
+
+![Data-pulau](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/data-asli.png)
+
+Data yang direkomendasikan memiliki nilai kota yang sama yaitu Jakarta.
+
+![Data-pulau](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/rekomendasi.png)
 
 ### Modeling Collaborative FIltering
 
@@ -237,12 +222,31 @@ Sedangkan optimizer yang digunakan untuk model adalah Adam dengan learning rate 
 
 Diketahui nilai mae terendah adalah 0.2465 (25%) nilai ini cukup rendah tetapi nilai val menaik ketika nilai mae menurun. Hal ini bisa mengakibatkan model *overfitting*.
 
+## Evaluation Model
+### Content Based Filtering
+![precision](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/eval-latex.png)
+
+Berdasarkan hasil rekomendasi diketahui bahwa hasil rekomendasi memiliki nama kota yang sama yaitu Jakarta, untuk menghitung ketepatan dari model dengan menggunakan rumus berikut: 
+
+```
+precision = (len(recomended['place_city'] == 'Jakarta')/len(recomended))*100
+print(f'precission: {precision} %')
+```
+
+Setelah dihitung ternyata memiliki hasil precision 10/10 = 1, data memiliki nilai precision yang baik. Sehingga model maupun data baik untuk digunakan dalam membuat sistem rekomendasi berdasarkan content. Model ini hanya merekomendasikan berdasarkan history lokasi/kota. Untuk meningkatkan bisa dengan melakukan rekomendasi berdasarkan kategori tempat wisata.
+
 ### Evaluation Model Collaborative FIltering
 Evaluasi dilakukan untuk mengetahui bagaimana tingkat error model sehingga bisa mengetahui bagaimana performa dari model yang dibuat. Evaluasi menggunakan metrics MSE. 
 
 ![mae](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/mae_rumus.png)
 
 Nilai mae yang didapatkan tidak terlalu tinggi sehingga model ini cocok untuk digunakan dalam sistem rekomendasi, tetapi mae dengan nilai 34% bisa mengakibatkan *overfitting *model.
+
+
+
+
+
+
 
 
 ### Prediction 
