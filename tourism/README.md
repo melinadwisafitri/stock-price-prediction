@@ -16,9 +16,9 @@
 </details>
 
 ## Project Overview
-Pariwisata adalah kegiatan berkunjung ke suatu tempat lain dengan tujuan mencari suasana baru [Islamiyah, M., Subekti, P. and Andini, T.D : 2019](https://jurnal.stmikasia.ac.id/index.php/jitika/article/view/70). Pariwisata juga salah satu penghasil devisa yang tinggi untuk daerah sehingga sektor pariwisata terus ditingkatkan. Tetapi karena banyaknya lokasi wisata di daerah yang belum terekspos dan dikenal orang membuat orang kesulitan mencari lokasi wisata yang menarik untuk dikunjungi. 
+Pariwisata adalah kegiatan berkunjung ke suatu tempat lain dengan tujuan mencari suasana baru ([Islamiyah, M., Subekti, P. and Andini, T.D : 2019](https://jurnal.stmikasia.ac.id/index.php/jitika/article/view/70)). Pariwisata juga salah satu penghasil devisa yang tinggi untuk daerah sehingga sektor pariwisata terus ditingkatkan. Tetapi karena banyaknya lokasi wisata di daerah yang belum terekspos dan dikenal orang membuat orang kesulitan mencari lokasi wisata yang menarik untuk dikunjungi. 
 
-Sehingga diperlukan sebuah sistem rekomendasi yang bisa membantu orang untuk menemukan tempat wisata yang menarik berdasarkan nama (menggunakan lokasi/kota sebagai penentu), history data [G. Fenza, E. Fischetti, D. Furno, V. Loia : 2011](https://ieeexplore.ieee.org/abstract/document/6007604/), maupun *rating* yang diberikan orang.
+Sehingga diperlukan sebuah sistem rekomendasi yang bisa membantu orang untuk menemukan tempat wisata yang menarik berdasarkan nama (menggunakan lokasi/kota sebagai penentu), history data ([G. Fenza, E. Fischetti, D. Furno, V. Loia : 2011](https://ieeexplore.ieee.org/abstract/document/6007604/)), maupun *rating* yang diberikan orang.
 
 ## Domain Proyek
 Domain dalam proyek ini adalah pariwisata, disesuaikan dengan permasalah yang ada di Indonesia, untuk mempermudah menemukan lokasi wisata menggunakan sistem rekomendasi.
