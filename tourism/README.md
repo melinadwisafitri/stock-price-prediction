@@ -3,15 +3,16 @@
 <details>
 <summary>Daftar Isi</summary>
 
+- [Project Overview](#project-overview)
 - [Domain Proyek](#domain-proyek)
 - [Business Understanding](#business-understanding)
     - [Problem Statements](#problem-statements)
     - [Goals](#goals)
     - [Solution statements](#solution-statements)
 - [Data Understanding](#data-understanding)
-    
-- [Content Based FIltering](#content-based-filtering)
-    - [Data Preparation](#data-preparation)
+- [Modeling](#modeling)
+- [Evaluation Model](#evaluation-model)
+- [Prediction](#prediction)
 
 </details>
 
@@ -166,13 +167,12 @@ Data akan diubah menjadi array, data yang digunakan untuk cosine_similarity adal
 
 ![Similarity](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/similarity.png)
 
-Data hasil similarity akan disimpan di dalam variable baru di mana data ini yang akan digunakan untuk membangun model nanti.
+Data hasil similarity akan disimpan di dalam variable baru di mana data ini yang akan digunakan untuk membangun model.
 
 ![similariry1](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/similarity1.png)
 
 
-## Collaborative Filtering
-### Data understanding Collaborative Filtering
+### Collaborative Filtering
 Data yang digunakan adalah data rating, yang memiliki baris 1000 dan kolom 3.
 
 ![rating](https://github.com/melinadwisafitri/BCA_Stock_price_dan_tourism/raw/master/tourism/images/ratings.png)
@@ -243,13 +243,7 @@ Evaluasi dilakukan untuk mengetahui bagaimana tingkat error model sehingga bisa 
 Nilai mae yang didapatkan tidak terlalu tinggi sehingga model ini cocok untuk digunakan dalam sistem rekomendasi, tetapi mae dengan nilai 34% bisa mengakibatkan *overfitting *model.
 
 
-
-
-
-
-
-
-### Prediction 
+## Prediction 
 Untuk pengujian dari evaluasi model,maka diperlukan pengujian. Proses pengujian dapat dilakukan dengan menggunakan data tourism info yang sudah diproses sebelumnya, dan data tersebut disimpan dalam variable data berjenis dictionary. 
 
 Rekomendasi dari user 225(kenapa 284 karena data yang diambil contoh acak berdasarkan id user pada data rating) mengatakan top 3 rating tertinggi adalah:
